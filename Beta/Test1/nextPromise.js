@@ -27,14 +27,26 @@ function resize(fileName){
                  let resizedFile=fileName.split(".")[0]+"resized"+".png"
                  console.log("2")
                  resolve(resizedFile)
-             },5000)
+             },2000)
          }
          
      })
 }
 
 
-download('http://www.google.com/logo.png').then(resize).then(function(resized){
-    console.log(resized)
-}).catch(function(err) { console.error(err)})
+
+// Promise.all helps us to run the code parallely
+Promise.all([
+    download("http://youtube.com/yesesr.png"),
+    download("http://www.youtube.com/vanner.png"),
+    download("http://donload.com/animal.png")
+]).then(function(downloadValues){
+   return Promise.all([downloadValues.map(resize)])
+}).then(function(uploadValues){
+    setTimeout(function(){
+        console.log(uploadValues)
+
+    },2000)
+    
+})
 

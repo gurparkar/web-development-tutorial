@@ -1,0 +1,14 @@
+{
+  "name": "npm-package-install",
+  "version": "1.0.0",
+  "description": "A newbie try",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tri"
+  ],
+  "author": "Gurparkar Singh",
+  "license": "ISC"
+}
